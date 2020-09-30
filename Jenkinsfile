@@ -20,8 +20,6 @@
           export TF_VAR_okta_inline_hook_name=${params.hookname}
           export TF_VAR_okta_idp_social_name=${params.idpname}
 
-          
-
           terraform plan -out myplan
           """
         }
