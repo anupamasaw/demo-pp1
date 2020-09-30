@@ -1,25 +1,15 @@
 ### User ###
-variable "okta_user_first_name"{
-  default = "anu"
-  }
-variable "okta_user_last_name"{
-   default = "saw"
-  }
-variable "okta_user_login"{
-  default = "anu@gmail.com"
-}
-variable "okta_user_email"{
-  default = "anu@gmail.com"
-  }
+variable "okta_user_first_name"{}
+variable "okta_user_last_name"{}
+variable "okta_user_login"{}
+variable "okta_user_email"{}
+ 
 
 ### Group ###
 
-variable "okta_group_name"{
-  default = "gp1"
-  }
-variable "okta_group_description"{
-  default = "abcx"
-  }
+variable "okta_group_name"{}
+variable "okta_group_description"{}
+  
 
 ### Auth Server ###
 
@@ -29,11 +19,11 @@ variable "okta_auth_server_audiences" {
 
 variable "okta_auth_server_description" {
   default = "My Example Auth Server"
-}
- 
-variable "okta_auth_server_name"{
-  default = "auth"
   }
+  
+ 
+variable "okta_auth_server_name"{}
+  
  
 variable "okta_auth_server_issuer_mode" {
   default = "ORG_URL"
@@ -42,9 +32,8 @@ variable "okta_auth_server_issuer_mode" {
 
 ### App Saml ###
 
-variable "okta_app_saml_label"{
-  default = " bcnjd"
-  }
+variable "okta_app_saml_label"{}
+ 
 
 variable "okta_app_saml_sso_url" {
   default = "http://example.com"
@@ -84,9 +73,8 @@ variable "okta_app_saml_honor_force_authn" {
 
 ### Inline Hook ###
 
-variable "okta_inline_hook_name"{
-  default = "hook"
-  }
+variable "okta_inline_hook_name"{}
+  
 
 variable "okta_inline_hook_version" {
   default = "1.0.1"
@@ -107,9 +95,8 @@ variable "okta_idp_social_protocol_type" {
   default = "OAUTH2"
 }
 
-variable "okta_idp_social_name"{
-  default = "idp"
-  }
+variable "okta_idp_social_name"{}
+  
 
 
 
