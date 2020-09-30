@@ -7,7 +7,7 @@
     stage('TF Plan') {
       steps {
           sh 'terraform init'
-          environment {
+          sh """
            TF_VAR_okta_user_first_name="${params.userfirstname}"
            TF_VAR_okta_user_last_name="${params.userlastname}"
            TF_VAR_okta_user_login="${params.userlogin}"
@@ -20,7 +20,8 @@
            TF_VAR_okta_inline_hook_name="${params.hookname}"
            TF_VAR_okta_idp_social_name="${params.idpname}"
 
-          sh 'terraform plan -out myplan'
+          terraform plan -out myplan
+          """
           }
         }
       }
