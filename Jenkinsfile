@@ -7,21 +7,21 @@
     stage('TF Plan') {
       steps {
           sh 'terraform init'
-          sh """
-          export TF_VAR_okta_user_first_name=${params.userfirstname}
-          export TF_VAR_okta_user_last_name=${params.userlastname}
-          export TF_VAR_okta_user_login=${params.userlogin}
-          export TF_VAR_okta_user_email=${params.useremail}
-          export TF_VAR_okta_group_name=${params.groupname}
-          export TF_VAR_group_description=${params.groupdescription}
-          export TF_VAR_okta_auth_server_name=${params.servername}
-          export TF_VAR_okta_auth_server_description=${params.serverdescription}
-          export TF_VAR_okta_app_saml_label=${params.samllabel}
-          export TF_VAR_okta_inline_hook_name=${params.hookname}
-          export TF_VAR_okta_idp_social_name=${params.idpname}
+          environment {
+           TF_VAR_okta_user_first_name="${params.userfirstname}"
+           TF_VAR_okta_user_last_name="${params.userlastname}"
+           TF_VAR_okta_user_login="${params.userlogin}"
+           TF_VAR_okta_user_email="${params.useremail}"
+           TF_VAR_okta_group_name="${params.groupname}"
+           TF_VAR_group_description="${params.groupdescription}"
+           TF_VAR_okta_auth_server_name="${params.servername}"
+           TF_VAR_okta_auth_server_description="${params.serverdescription}"
+           TF_VAR_okta_app_saml_label="${params.samllabel}"
+           TF_VAR_okta_inline_hook_name="${params.hookname}"
+           TF_VAR_okta_idp_social_name="${params.idpname}"
 
-          terraform plan -out myplan
-          """
+          sh 'terraform plan -out myplan'
+          }
         }
       }
 
