@@ -22,7 +22,7 @@
 
           terraform plan -out myplan
           """
-          }
+          
         }
       }
 
